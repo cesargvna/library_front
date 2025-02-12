@@ -1,1 +1,1 @@
-//lineas de prueba
+export { default } from './Avatar';
