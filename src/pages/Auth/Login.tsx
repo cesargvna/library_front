@@ -7,21 +7,29 @@ import {
     Input, 
     Form, 
 } from "./Login.styles";
-import  Button  from "../../components/Button";
+import Button from "../../components/Button";
 import { enqueueSnackbar } from "notistack";
-
+import { validateLogin } from "../../validators/login.validator";
 const Login: React.FC = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        const message = `Login con: ${username}, ${password}`;
-        enqueueSnackbar(message, {
-          
-            variant: 'success'
+        
+        const errors = validateLogin(username, password);
+        if (errors.username) {
+            enqueueSnackbar(errors.username, { variant: "error" });
+        }
+        if (errors.password) {
+            enqueueSnackbar(errors.password, { variant: "error" });
+        }
+        if (errors.username || errors.password) {
+            return;
+        }
 
-          })
+        const message = `Login con: ${username}, ${password}`;
+        enqueueSnackbar(message, { variant: "success" });
         console.log("Login con:", { username, password });
     };
 
@@ -46,10 +54,9 @@ const Login: React.FC = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         placeholder="Contraseña"
-                        
                     />
 
-                    <Button label="Iniciar Sesion" onClick={()=>handleSubmit} />
+                    <Button label="Iniciar Sesion" onClick={handleSubmit} />
                 </Form>
             </LoginBox>
         </Container>
