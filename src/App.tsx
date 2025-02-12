@@ -10,7 +10,7 @@ const App: React.FC = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Button label="Click Me" />
-      <Avatar src="https://example.com/avatar.jpg" alt="User Avatar" />
+      <Avatar name="Tatiana Mayorga" src="" />
     </ThemeProvider>
   );
 };
