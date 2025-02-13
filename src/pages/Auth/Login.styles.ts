@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Form, Field, } from 'formik';
+import { Form, Field } from "formik";
 
 export const Container = styled.div`
     display: flex;
@@ -47,17 +47,14 @@ export const Registration = styled(Form)`
 `;
 
 export const Input = styled(Field)`
+    flex: 1;
     padding: 10px;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    border-bottom: 2px solid #ddd;
-    border-radius: 5px;
+    border: none;
     font-size: 14px;
+    background: transparent;
 
     &:focus {
         outline: none;
-        border-bottom: 2px solid ${(props) => props.theme.colors.primary};
     }
 `;
 
@@ -87,5 +84,22 @@ export const ErrorMessage = styled.p`
 export const InputGroup = styled.div`
     display: flex;
     flex-direction: column;
+`;
 
+export const InputWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 2px solid #ddd;
+
+    &:focus-within {
+        border-bottom: 2px solid ${(props) => props.theme.colors.primary};
+    }
+
+    svg {
+        color: #bbb;
+    }
 `;
