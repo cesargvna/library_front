@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Form, Field, } from 'formik';
 
 export const Container = styled.div`
     display: flex;
@@ -39,13 +40,13 @@ export const Logo = styled.div`
     margin: 20px auto;
 `;
 
-export const Form = styled.form`
+export const Registration = styled(Form)`
     display: flex;
     flex-direction: column;
     gap: 30px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
     padding: 10px;
     border-left: none;
     border-right: none;

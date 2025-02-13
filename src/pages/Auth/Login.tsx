@@ -1,20 +1,20 @@
 import React from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
+import { } from "formik";
+import { Formik } from 'formik';
+import * as Yup from 'yup';
 import {
     Container,
     LoginBox,
     Title,
     Logo,
     Input,
-    Form,
     ErrorMessage,
-    InputGroup
+    InputGroup,
+    Registration
 } from "./Login.styles";
 import Button from "../../components/Button";
 import { enqueueSnackbar } from "notistack";
-
-const validationSchema = Yup.object({
+const SignupSchema = Yup.object().shape({
     username: Yup.string()
         .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
         .max(15, "El nombre de usuario debe tener como máximo 15 caracteres")
@@ -25,58 +25,54 @@ const validationSchema = Yup.object({
 });
 
 const Login: React.FC = () => {
-    const formik = useFormik({
-        initialValues: {
-            username: "",
-            password: "",
-        },
-        validationSchema,
-        onSubmit: (values) => {
-            const message = `Login con: ${values.username}, ${values.password}`;
-            enqueueSnackbar(message, { variant: "success" });
-            console.log("Login con:", values);
-        },
-    });
 
     return (
         <Container>
             <LoginBox>
                 <Title>BIENVENIDOS</Title>
                 <Logo>M</Logo>
-                <Form onSubmit={formik.handleSubmit}>
-                    <InputGroup>
-                        <Input
-                            type="text"
-                            id="username"
-                            name="username"
-                            value={formik.values.username}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            placeholder="Nombre de usuario"
-                            autoComplete="off"
-                        />
-                        {formik.touched.username && formik.errors.username ? (
-                            <ErrorMessage>{formik.errors.username}</ErrorMessage>
-                        ) : null}
-                    </InputGroup>
+                <Formik
+                    initialValues={{
+                        username: "",
+                        password: "",
+                    }}
+                    validationSchema={SignupSchema}
+                    onSubmit={values => {
+                        // same shape as initial values
+                        console.log(values);
+                    }}
+                >
+                    {({ errors, touched }) => (
+                        <Registration >
+                            <InputGroup>
+                                <Input
+                                    type="text"
+                                    id="username"
+                                    name="username"
+                                    placeholder="Nombre de usuario"
+                                    autoComplete="off"
+                                />
+                                {errors.username && touched.username ? (
+                                    <ErrorMessage>{errors.username}</ErrorMessage>
+                                ) : null}
+                            </InputGroup>
 
-                    <InputGroup>
-                        <Input
-                            type="password"
-                            id="password"
-                            name="password"
-                            value={formik.values.password}
-                            onChange={formik.handleChange}
-                            onBlur={formik.handleBlur}
-                            placeholder="Contraseña"
-                        />
-                        {formik.touched.password && formik.errors.password ? (
-                            <ErrorMessage>{formik.errors.password}</ErrorMessage>
-                        ) : null}
-                    </InputGroup>
+                            <InputGroup>
+                                <Input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    placeholder="Contraseña"
+                                />
+                                {errors.password && touched.password ? (
+                                    <ErrorMessage>{errors.password}</ErrorMessage>
+                                ) : null}
+                            </InputGroup>
+                            <Button type="submit" label="Iniciar Sesión" />
+                        </Registration>
+                    )}
+                </Formik>
 
-                    <Button type="submit" label="Iniciar Sesión" />
-                </Form>
             </LoginBox>
         </Container>
     );
