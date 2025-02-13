@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Form, Field, } from 'formik';
 
 export const Container = styled.div`
     display: flex;
@@ -39,13 +40,13 @@ export const Logo = styled.div`
     margin: 20px auto;
 `;
 
-export const Form = styled.form`
+export const Registration = styled(Form)`
     display: flex;
     flex-direction: column;
     gap: 30px;
 `;
 
-export const Input = styled.input`
+export const Input = styled(Field)`
     padding: 10px;
     border-left: none;
     border-right: none;
@@ -73,4 +74,18 @@ export const Button = styled.button`
     &:hover {
         opacity: 0.8;
     }
+`;
+
+export const ErrorMessage = styled.p`
+    color: ${(props) => props.theme.colors.error};
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+`;
+
+export const InputGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+
 `;
