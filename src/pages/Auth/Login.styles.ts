@@ -74,3 +74,17 @@ export const Button = styled.button`
         opacity: 0.8;
     }
 `;
+
+export const ErrorMessage = styled.p`
+    color: ${(props) => props.theme.colors.error};
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+`;
+
+export const InputGroup = styled.div`
+    display: flex;
+    flex-direction: column;
+
+`;
