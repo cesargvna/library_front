@@ -1,14 +1,13 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
   width: 80px;
   height: 100vh;
-  background: ${(props) => props.theme.colors.primary};
-  padding: 20px 10px;
+  background: ${(props) => props.theme.colors.primary}; /* 🔥 Mantiene el color primario */
+  padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
   transition: width 0.3s ease;
   overflow: hidden;
   position: fixed;
@@ -17,16 +16,9 @@ export const SidebarContainer = styled.div`
 
   &:hover {
     width: 250px;
+    align-items: flex-start;
+    padding-left: 15px;
   }
-`;
-
-export const Logo = styled.div`
-  font-size: 24px;
-  font-weight: bold;
-  color: ${(props) => props.theme.colors.background};
-  text-align: center;
-  margin-bottom: 20px;
-  width: 100%;
 `;
 
 export const NavList = styled.div`
@@ -39,39 +31,48 @@ export const NavList = styled.div`
 export const NavItem = styled.div`
   display: flex;
   align-items: center;
-  gap: 15px;
-  padding: 12px;
-  color: ${(props) => props.theme.colors.background};
-  font-size: 18px;
-  font-weight: bold;
+  padding: 15px;
   border-radius: 8px;
   cursor: pointer;
   width: 100%;
-  transition: background 0.3s;
-  justify-content: flex-start;
-  padding-left: 20px;
+  transition: background 0.3s ease, padding-left 0.3s ease;
+  justify-content: center;
   white-space: nowrap;
+  overflow: hidden;
 
   &:hover {
-    background: ${(props) => props.theme.colors.secondary};
+    background: rgba(255, 255, 255, 0.2); /* 🔥 Suave cambio en hover */
   }
 
-  svg {
-    font-size: 22px;
-    min-width: 30px;
+  a {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #ffffff; /* 🔥 Texto en blanco */
+    width: 100%;
   }
 
-  /* Ocultar el texto cuando la barra está colapsada */
-  span {
-    opacity: 0;
-    width: 0;
-    overflow: hidden;
-    transition: opacity 0.3s ease, width 0.3s ease;
+  /* ÍCONOS SIEMPRE VISIBLES */
+  .icon {
+    font-size: 24px;
+    min-width: 40px;
+    text-align: center;
+    color: #ffffff; /* 🔥 Íconos en blanco */
   }
 
-  /* Mostrar el texto cuando la barra está expandida */
-  ${SidebarContainer}:hover & span {
-    opacity: 1;
-    width: auto;
+  /* OCULTAR EL TEXTO CUANDO EL SIDEBAR ESTÁ COLAPSADO */
+  .nav-text {
+    display: none;
+    color: #ffffff; /* 🔥 Texto en blanco cuando se expanda */
+  }
+
+  /* MOSTRAR EL TEXTO CUANDO EL SIDEBAR SE EXPANDE */
+  ${SidebarContainer}:hover & {
+    justify-content: flex-start;
+  }
+
+  ${SidebarContainer}:hover & .nav-text {
+    display: inline;
   }
 `;
