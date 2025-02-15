@@ -7,7 +7,7 @@ export const SidebarContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  background-color: black;
+  background-color: ${(props) => props.theme.colors.background};
   width: calc(100vw - 80px); 
   height: calc(100vh - 60px);
   position: absolute;

@@ -1,10 +1,12 @@
 import { FaHome, FaUser, FaShoppingCart, FaBox, FaDollarSign, FaClipboardList, FaUsers, FaCog } from "react-icons/fa";
+import { Logo } from "../../pages/Auth/Login.styles";
 
 export const sidebarItems = [
-  { path: "/", icon: <FaHome />, label: "Datos Generales" },
+  { path: "/subsidiary", icon: <FaHome />, label: "Empresa" },
+  { path: "/", icon: <FaHome />, label: "Dashboard" },
   {
     icon: <FaUser />,
-    label: "Usuarios",
+    label: "Usuarios y Roles",
     path: "/users",
     
   },
