@@ -21,4 +21,7 @@ export const GlobalStyles = createGlobalStyle`
   a:visited, a:focus, a:active {
     color: inherit !important;
   }
+  main{
+    width: 100%;
+  }
 `;

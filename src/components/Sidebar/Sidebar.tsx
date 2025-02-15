@@ -1,21 +1,32 @@
-import React from "react";
-import { Route, Routes, Link,Outlet  } from "react-router";
+import React,{useState} from "react";
+import { Link } from "react-router";
 import { sidebarItems } from "./SidebarData";
-import { SidebarContainer, NavList, NavItem } from "./Sidebar.style";
+import { SidebarContainer, NavList, NavItem, SidebarContent,Main } from "./Sidebar.style";
+import Header from "../Header/Header";
 
-const Sidebar = () => {
+
+const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   return (
     <SidebarContainer>
-      <NavList>
-        {sidebarItems.map((item, index) => (
-          <NavItem key={index}>
-            <Link to={item.path || "#"}>
-              <span className="icon">{item.icon}</span> {/* 🔥 Íconos en blanco */}
-              <span className="nav-text">{item.label}</span>
-            </Link>
-          </NavItem>
-        ))}
-      </NavList>
+      <SidebarContent>
+        <NavList>
+          {sidebarItems.map((item, index) => (
+            <NavItem 
+            key={index}  
+            className={activeIndex === index ? "active" : ""}
+            onClick={() => setActiveIndex(index)}
+            >
+              <Link to={item.path || "#"} >
+                <span className="icon">{item.icon}</span> 
+                <span className="nav-text">{item.label}</span>
+              </Link>
+            </NavItem>
+          ))}
+        </NavList>
+      </SidebarContent>
+      <Header />
+      <Main>{children}</Main>
     </SidebarContainer>
   );
 };

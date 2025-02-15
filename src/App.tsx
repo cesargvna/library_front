@@ -3,10 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router"; // ✅ Im
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/GlobalStyles";
 import { theme } from "./styles/Theme";
-import Layout from "./components/Layout";
 import Login from "./pages/Auth/Login";
-import Home from "./pages/Home";
-import Sidebar from "./components/Sidebar";
+import Private from "./components/Private";
 
 const App: React.FC = () => {
   return (
@@ -17,10 +15,7 @@ const App: React.FC = () => {
           {/* Ruta de Login sin Layout */}
           <Route path="/login" element={<Login />} />
 
-          {/* Rutas dentro del Layout */}
-          <Route path="/prueba" element={<Sidebar />}>
-            <Route index element={<Home />} /> {/* Página principal */}
-          </Route>
+          <Route path="/*" element={<Private />} />
         </Routes>
     </ThemeProvider>
   );

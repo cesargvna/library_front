@@ -5,18 +5,13 @@ export const sidebarItems = [
   {
     icon: <FaUser />,
     label: "Usuarios",
-    subItems: [
-      { path: "/users/list", label: "Lista de Usuarios" },
-      { path: "/users/create", label: "Crear Usuario" },
-    ],
+    path: "/users",
+    
   },
   {
     icon: <FaBox />,
     label: "Inventario",
-    subItems: [
-      { path: "/inventory/list", label: "Ver Inventario" },
-      { path: "/inventory/add", label: "Agregar Producto" },
-    ],
+    path: "inventory",
   },
   { path: "/products", icon: <FaShoppingCart />, label: "Productos" },
   { path: "/sales", icon: <FaDollarSign />, label: "Ventas" },

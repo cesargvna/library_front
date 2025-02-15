@@ -1,23 +1,40 @@
 import styled from "styled-components";
 
 export const SidebarContainer = styled.div`
+  width: 100vw;
+  height: 100vh;
+  position: relative; 
+`;
+
+export const Main = styled.main`
+  background-color: black;
+  width: calc(100vw - 80px); 
+  height: calc(100vh - 60px);
+  position: absolute;
+  right:0; 
+  bottom: 0;
+  overflow-y: auto;
+  
+`;
+
+export const SidebarContent = styled.div`
   width: 80px;
   height: 100vh;
-  background: ${(props) => props.theme.colors.primary}; /* 🔥 Mantiene el color primario */
+  background: ${(props) => props.theme.colors.primary}; 
   padding: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: width 0.3s ease;
+  transition: width 0.3s ;
   overflow: hidden;
-  position: fixed;
+  position: absolute;
   left: 0;
   top: 0;
+  bottom: 0;
 
   &:hover {
     width: 250px;
-    align-items: flex-start;
-    padding-left: 15px;
+    z-index: 1;
   }
 `;
 
@@ -32,7 +49,7 @@ export const NavItem = styled.div`
   display: flex;
   align-items: center;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
   cursor: pointer;
   width: 100%;
   transition: background 0.3s ease, padding-left 0.3s ease;
@@ -41,7 +58,7 @@ export const NavItem = styled.div`
   overflow: hidden;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.2); /* 🔥 Suave cambio en hover */
+    background: ${(props) => props.theme.colors.secondary}; 
   }
 
   a {
@@ -49,30 +66,33 @@ export const NavItem = styled.div`
     align-items: center;
     gap: 15px;
     text-decoration: none;
-    color: #ffffff; /* 🔥 Texto en blanco */
+    color: #ffffff; /* Texto en blanco */
     width: 100%;
+    
+  }
+  .active{
+    background: ${(props) => props.theme.colors.secondary};
   }
 
-  /* ÍCONOS SIEMPRE VISIBLES */
   .icon {
     font-size: 24px;
     min-width: 40px;
     text-align: center;
-    color: #ffffff; /* 🔥 Íconos en blanco */
+    color: #ffffff; /* Íconos en blanco */
   }
 
   /* OCULTAR EL TEXTO CUANDO EL SIDEBAR ESTÁ COLAPSADO */
   .nav-text {
     display: none;
-    color: #ffffff; /* 🔥 Texto en blanco cuando se expanda */
+    color: #ffffff; /* Texto en blanco cuando se expanda */
   }
 
   /* MOSTRAR EL TEXTO CUANDO EL SIDEBAR SE EXPANDE */
-  ${SidebarContainer}:hover & {
-    justify-content: flex-start;
+  ${SidebarContent}:hover & .nav-text {
+    display: inline;
   }
 
-  ${SidebarContainer}:hover & .nav-text {
-    display: inline;
+  &.active {
+    background: ${(props) => props.theme.colors.secondary};
   }
 `;
