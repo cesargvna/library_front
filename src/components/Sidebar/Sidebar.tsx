@@ -3,6 +3,7 @@ import { Link } from "react-router";
 import { sidebarItems } from "./SidebarData";
 import { SidebarContainer, NavList, NavItem, SidebarContent,Main } from "./Sidebar.style";
 import Header from "../Header/Header";
+import { Logo } from "../../pages/Auth/Login.styles";
 
 
 const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
@@ -11,6 +12,7 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
     <SidebarContainer>
       <SidebarContent>
         <NavList>
+          <Logo>M</Logo>
           {sidebarItems.map((item, index) => (
             <NavItem 
             key={index}  
