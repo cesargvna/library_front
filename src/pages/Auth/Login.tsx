@@ -1,7 +1,7 @@
 import React from "react";
-import { } from "formik";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { FaUser, FaLock } from "react-icons/fa";
 import {
     Container,
     LoginBox,
@@ -10,10 +10,11 @@ import {
     Input,
     ErrorMessage,
     InputGroup,
-    Registration
+    Registration,
+    InputWrapper
 } from "./Login.styles";
 import Button from "../../components/Button";
-import { enqueueSnackbar } from "notistack";
+
 const SignupSchema = Yup.object().shape({
     username: Yup.string()
         .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
@@ -25,7 +26,6 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Login: React.FC = () => {
-
     return (
         <Container>
             <LoginBox>
@@ -38,32 +38,37 @@ const Login: React.FC = () => {
                     }}
                     validationSchema={SignupSchema}
                     onSubmit={values => {
-                        // same shape as initial values
                         console.log(values);
                     }}
                 >
                     {({ errors, touched }) => (
-                        <Registration >
+                        <Registration>
                             <InputGroup>
-                                <Input
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Nombre de usuario"
-                                    autoComplete="off"
-                                />
+                                <InputWrapper>
+                                    <FaUser style={{ color: "var(--primary-color)" }} />
+                                    <Input
+                                        type="text"
+                                        id="username"
+                                        name="username"
+                                        placeholder="Nombre de usuario"
+                                        autoComplete="off"
+                                    />
+                                </InputWrapper>
                                 {errors.username && touched.username ? (
                                     <ErrorMessage>{errors.username}</ErrorMessage>
                                 ) : null}
                             </InputGroup>
 
                             <InputGroup>
-                                <Input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    placeholder="Contraseña"
-                                />
+                                <InputWrapper>
+                                    <FaLock style={{ color: "var(--primary-color)" }} />
+                                    <Input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Contraseña"
+                                    />
+                                </InputWrapper>
                                 {errors.password && touched.password ? (
                                     <ErrorMessage>{errors.password}</ErrorMessage>
                                 ) : null}
@@ -72,7 +77,6 @@ const Login: React.FC = () => {
                         </Registration>
                     )}
                 </Formik>
-
             </LoginBox>
         </Container>
     );
