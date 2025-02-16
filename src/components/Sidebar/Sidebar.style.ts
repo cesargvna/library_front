@@ -7,7 +7,7 @@ export const SidebarContainer = styled.div`
 `;
 
 export const Main = styled.main`
-  background-color: black;
+  background-color: ${(props) => props.theme.colors.background};
   width: calc(100vw - 80px); 
   height: calc(100vh - 60px);
   position: absolute;
@@ -94,5 +94,47 @@ export const NavItem = styled.div`
 
   &.active {
     background: ${(props) => props.theme.colors.secondary};
+  }
+`;
+
+export const SubMenu = styled.div`
+  background-color: #1a2a3a;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 100%;
+  max-height: 200px; /* Controla la altura del submenú */
+  overflow-y: auto; /* Permite scroll solo si es necesario */
+  overflow-x: hidden; /* Elimina el desplazamiento horizontal */
+  display: none;
+  flex-direction: column;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  padding: 5px 0;
+  z-index: 100;
+  transition: all 0.2s ease-in-out;
+
+  .submenu-item {
+    padding: 12px 18px;
+    color: #ffffff;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .submenu-item:hover {
+    background-color: #2b3b4b;
+    transform: translateX(5px);
+  }
+`;
+
+export const NavItemWithSubmenu = styled.div`
+  position: relative;
+  width: 100%;
+
+  &:hover ${SubMenu} {
+    display: flex;
   }
 `;
