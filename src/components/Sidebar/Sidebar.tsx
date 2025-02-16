@@ -25,7 +25,10 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
                 <SubMenu>
                   {item.submenu.map((subItem, subIndex) => (
                     <NavItem key={subIndex} className="submenu-item">
-                      <Link to={subItem.path || "#"}>{subItem.label}</Link>
+                      <Link to={subItem.path || "#"}>
+                        <span className="icon">{subItem.icon}</span>
+                        <span className="nav-text">{subItem.label}</span>
+                      </Link>
                     </NavItem>
                   ))}
                 </SubMenu>

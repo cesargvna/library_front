@@ -1,22 +1,21 @@
 import React from "react";
-import { Route, Routes, Link, Outlet } from "react-router";
+import { Outlet } from "react-router";
 import Sidebar from "./Sidebar/Sidebar";
-import Users from "../pages/Users/Users";
-import NotFoundPage from "../utilities/NotFoundPage";
 
 const Private = () => {
   return (
+    <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>
+      {/* ✅ Sidebar siempre visible */}
+      <Sidebar> 
+        {/* ✅ Aquí se renderizan las rutas sin afectar el Sidebar */}
+      <div style={{ flex: 1, padding: "20px", overflowY: "auto" }}>
+        <Outlet /> {/* Este cambia solo el contenido de la derecha */}
+      </div>
+      </Sidebar>
 
-    <Sidebar>
-      <NotFoundPage>
-        <Route path="/users" element={<Users />} />
-      </NotFoundPage>
-    </Sidebar>
-
-
+      
+    </div>
   );
 };
 
 export default Private;
-
-
