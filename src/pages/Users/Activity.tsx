@@ -1,7 +1,8 @@
-import React from "react";
+export default function Activity() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>ACTIVITY</h1>
 
-const Activity = () => {
-  return <h1>Actividad de Usuarios</h1>;
-};
-
-export default Activity;
+    </div>
+  )
+}

@@ -16,7 +16,7 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
           {sidebarItems.map((item, index) => (
             <NavItemWithSubmenu key={index}>
               <NavItem className={activeIndex === index ? "active" : ""}>
-                <Link to={item.path || "#"}>
+              <Link to={item.path || "#"}>
                   <span className="icon">{item.icon}</span>
                   <span className="nav-text">{item.label}</span>
                 </Link>

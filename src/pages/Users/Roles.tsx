@@ -1,7 +1,8 @@
-import React from "react";
+export default function Roles() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>ROLES</h1>
 
-const Roles = () => {
-  return <h1>Roles y Permisos</h1>;
-};
-
-export default Roles;
+    </div>
+  )
+}
