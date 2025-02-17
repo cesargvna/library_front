@@ -10,7 +10,9 @@ const Private = () => {
   return (
 
     <Sidebar>
+      
       <Routes>
+        
         <Route path="/users" element={<Users />} />
         <Route path="/users/roles" element={<Roles />} />
         <Route path="/users/activity" element={<Activity />} />
