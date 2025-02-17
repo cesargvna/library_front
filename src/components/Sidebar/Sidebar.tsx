@@ -17,6 +17,7 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
           {sidebarItems.map((item, index) => (
             <NavItemWithSubmenu key={index}>
               <NavItem className={activeIndex === index ? "active" : ""}>
+                
               <ButtonSubMenu >
                   <span className="icon">{item.icon}</span>
                   <span className="nav-text">{item.label}</span>
@@ -25,7 +26,7 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
               {item.submenu && (
                 <SubMenu>
                   {item.submenu.map((subItem, subIndex) => (
-                    <NavItem key={subIndex} className="submenu-item">
+                    <NavItem key={subIndex} className="submenu-item" onClick={() => setActiveIndex(index)}>
                       <Link to={subItem.path || "#"}>
                         <span className="icon">{subItem.icon}</span>
                         <span className="nav-text">{subItem.label}</span>
