@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import { sidebarItems } from "./SidebarData";
-import { SidebarContainer, NavList, NavItem, SidebarContent, Main, SubMenu, NavItemWithSubmenu } from "./Sidebar.style";
+import { SidebarContainer, NavList, NavItem, SidebarContent, Main, SubMenu, NavItemWithSubmenu, ButtonSubMenu } from "./Sidebar.style";
 import Header from "../Header/Header";
 import { Logo } from "../../pages/Auth/Login.styles";
 
@@ -11,20 +11,22 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
   return (
     <SidebarContainer>
       <SidebarContent>
+        <Logo>M</Logo>
         <NavList>
-          <Logo>M</Logo>
+          
           {sidebarItems.map((item, index) => (
             <NavItemWithSubmenu key={index}>
               <NavItem className={activeIndex === index ? "active" : ""}>
-                <Link to={item.path || "#"}>
+                
+              <ButtonSubMenu >
                   <span className="icon">{item.icon}</span>
                   <span className="nav-text">{item.label}</span>
-                </Link>
+                </ButtonSubMenu>
               </NavItem>
               {item.submenu && (
                 <SubMenu>
                   {item.submenu.map((subItem, subIndex) => (
-                    <NavItem key={subIndex} className="submenu-item">
+                    <NavItem key={subIndex} className="submenu-item" onClick={() => setActiveIndex(index)}>
                       <Link to={subItem.path || "#"}>
                         <span className="icon">{subItem.icon}</span>
                         <span className="nav-text">{subItem.label}</span>

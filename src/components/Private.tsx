@@ -1,20 +1,26 @@
 import React from "react";
-import { Outlet } from "react-router";
+import { Route, Routes, Link, Outlet } from "react-router";
 import Sidebar from "./Sidebar/Sidebar";
+import Users from "../pages/Users/Users";
+import Roles from "../pages/Users/Roles";
+import Activity from "../pages/Users/Activity";
+import NotFoundPage from "../utilities/NotFoundPage";
 
 const Private = () => {
   return (
-    <div style={{ display: "flex", height: "100vh", overflow: "hidden" }}>
-      {/* ✅ Sidebar siempre visible */}
-      <Sidebar> 
-        {/* ✅ Aquí se renderizan las rutas sin afectar el Sidebar */}
-      <div style={{ flex: 1, padding: "20px", overflowY: "auto" }}>
-        <Outlet /> {/* Este cambia solo el contenido de la derecha */}
-      </div>
-      </Sidebar>
 
+    <Sidebar>
       
-    </div>
+      <Routes>
+        
+        <Route path="/users" element={<Users />} />
+        <Route path="/users/roles" element={<Roles />} />
+        <Route path="/users/activity" element={<Activity />} />
+      </Routes>
+        
+    </Sidebar>
+
+
   );
 };
 

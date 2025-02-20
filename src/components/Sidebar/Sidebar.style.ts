@@ -26,7 +26,7 @@ export const SidebarContent = styled.div`
   flex-direction: column;
   align-items: center;
   transition: width 0.3s ;
-  overflow: hidden;
+  /*overflow: hidden; */
   position: absolute;
   left: 0;
   top: 0;
@@ -43,6 +43,7 @@ export const NavList = styled.div`
   flex-direction: column;
   align-items: center;
   width: 100%;
+  overflow-y: auto;
 `;
 
 export const NavItem = styled.div`
@@ -133,8 +134,17 @@ export const SubMenu = styled.div`
 export const NavItemWithSubmenu = styled.div`
   position: relative;
   width: 100%;
-
   &:hover ${SubMenu} {
     display: flex;
   }
+`;
+
+export const ButtonSubMenu = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color: #ffffff; /* Texto en blanco */
+  width: 100%;
+  
 `;

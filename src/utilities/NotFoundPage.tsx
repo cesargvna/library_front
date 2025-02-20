@@ -1,4 +1,4 @@
-import React,{ Children, FC } from "react";  
+import React from "react";  
 import { Route, Routes } from "react-router";
 
 interface NotFoundPageProps {

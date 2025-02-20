@@ -42,34 +42,6 @@ const App: React.FC = () => {
           <Route path="/login" element={<Login />} />
 
           <Route path="/*" element={<Private />} />
-          <Route path="dashboard/main" element={<MainDashboard />} />
-            <Route path="dashboard/analytics" element={<Analytics />} />
-
-            <Route path="subsidiary/data" element={<DataEmpresa />} />
-            <Route path="subsidiary/reports" element={<ReportsEmpresa />} />
-            <Route path="subsidiary/expenses" element={<ExpensesEmpresa />} />
-            <Route path="subsidiary/closing" element={<ClosingEmpresa />} />
-
-            <Route path="users" element={<Users />} />
-            <Route path="users/roles" element={<Roles />} />
-            <Route path="users/activity" element={<Activity />} />
-
-            <Route path="inventory" element={<Inventory />} />
-            <Route path="products" element={<Products />} />
-            <Route path="catalog" element={<Catalog />} />
-            <Route path="alerts" element={<Alerts />} />
-
-            <Route path="sales" element={<Sales />} />
-            <Route path="quotes" element={<Quotes />} />
-            <Route path="clients" element={<Clients />} />
-            <Route path="returns" element={<Returns />} />
-
-            <Route path="settings/general" element={<GeneralSettings />} />
-            <Route path="settings/api" element={<ApiKey />} />
-            <Route path="settings/logs" element={<Logs />} />
-            <Route path="settings/backups" element={<Backups />} />
-
-            <Route path="documents" element={<Documents />} />
 
             {/* Ruta de página no encontrada */}
             <Route path="*" element={<NotFoundPage />} />
