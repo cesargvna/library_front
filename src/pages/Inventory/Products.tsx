@@ -1,7 +1,8 @@
-import React from "react";
+export default function Products() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>PRODUCTOS</h1>
 
-const Products = () => {
-  return <h1>Gestión de Productos</h1>;
-};
-
-export default Products;
+    </div>
+  )
+}

@@ -1,8 +1,8 @@
-// pages/Home.tsx
-import React from "react";
+export default function Home() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Home</h1>
 
-const Home = () => {
-  return <h1>Bienvenido a Datos Generales</h1>;
-};
-
-export default Home;
+    </div>
+  )
+}

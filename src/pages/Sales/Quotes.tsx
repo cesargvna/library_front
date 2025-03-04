@@ -1,7 +1,8 @@
-import React from "react";
+export default function Quotes() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Quotes</h1>
 
-const Quotes = () => {
-  return <h1>Gestión de Cotizaciones</h1>;
-};
-
-export default Quotes;
+    </div>
+  )
+}

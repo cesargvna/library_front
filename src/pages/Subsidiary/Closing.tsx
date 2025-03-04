@@ -1,7 +1,8 @@
-import React from "react";
+export default function Closing() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Cierre de caja</h1>
 
-const ClosingEmpresa = () => {
-  return <h1>Cierre de Caja</h1>;
-};
-
-export default ClosingEmpresa;
+    </div>
+  )
+}

@@ -44,6 +44,37 @@ export const NavList = styled.div`
   align-items: center;
   width: 100%;
   overflow-y: auto;
+  overflow-x: hidden; /* Evita el desplazamiento horizontal */
+
+  /* Estilos del scrollbar */
+  &::-webkit-scrollbar {
+    width: 3px; /* Ancho del scrollbar */
+    background: transparent; /* Fondo transparente */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.primary}; /* Color primario por defecto */
+    border-radius: 4px; /* Bordes redondeados */
+    transition: background 0.3s ease; /* Transición suave */
+  }
+
+  /* Cambia el color cuando el usuario hace hover sobre la lista */
+  &:hover::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.secondary}; /* Color secundario al hacer hover */
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.colors.primary}; /* Color del track */
+  }
+
+  /* Posicionando el scrollbar a la izquierda */
+  direction: rtl; /* Invierte la dirección del contenido */
+  text-align: left;
+
+  & > * {
+    direction: ltr; /* Restablece la dirección para los elementos internos */
+    text-align: left;
+  }
 `;
 
 export const NavItem = styled.div`
@@ -147,4 +178,19 @@ export const ButtonSubMenu = styled.div`
   color: #ffffff; /* Texto en blanco */
   width: 100%;
   
+`;
+
+export const LogoImage = styled.img`
+  width: 40px; /* Tamaño del logo */
+  height: 40px;
+  border-radius: 50%; /* Hace que sea circular */
+  object-fit: cover; /* Ajusta la imagen sin deformarla */
+  display: block;
+  margin: 20px auto; /* Centrar el logo */
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.1); /* Pequeño efecto de zoom al pasar el mouse */
+  }
 `;

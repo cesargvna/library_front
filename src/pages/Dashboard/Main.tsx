@@ -1,12 +1,8 @@
-import React from "react";
-
-const MainDashboard = () => {
+export default function Main() {
   return (
     <div>
-      <h1>Panel Principal</h1>
-      <p>Bienvenido al panel principal del dashboard.</p>
-    </div>
-  );
-};
+        <h1 style={{fontSize:"10rem"}}>Tablero principal</h1>
 
-export default MainDashboard;
+    </div>
+  )
+}

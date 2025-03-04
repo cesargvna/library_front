@@ -1,7 +1,8 @@
-import React from "react";
+export default function Reports() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Reportes</h1>
 
-const ReportsEmpresa = () => {
-  return <h1>Reportes de la Empresa</h1>;
-};
-
-export default ReportsEmpresa;
+    </div>
+  )
+}

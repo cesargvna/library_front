@@ -1,7 +1,8 @@
-import React from "react";
+export default function Expenses() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Gastos</h1>
 
-const ExpensesEmpresa = () => {
-  return <h1>Gastos de la Empresa</h1>;
-};
-
-export default ExpensesEmpresa;
+    </div>
+  )
+}

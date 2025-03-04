@@ -1,7 +1,8 @@
-import React from "react";
+export default function Returns() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>DEVOLUCIONES</h1>
 
-const Returns = () => {
-  return <h1>Gestión de Devoluciones</h1>;
-};
-
-export default Returns;
+    </div>
+  )
+}

@@ -1,7 +1,8 @@
-import React from "react";
+export default function Data() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>DATA</h1>
 
-const DataEmpresa = () => {
-  return <h1>Datos de la Empresa</h1>;
-};
-
-export default DataEmpresa;
+    </div>
+  )
+}

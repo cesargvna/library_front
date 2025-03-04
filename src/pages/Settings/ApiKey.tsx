@@ -1,7 +1,8 @@
-import React from "react";
+export default function ApiKeys() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>CONFIGURACION API</h1>
 
-const ApiKey = () => {
-  return <h1>Gestión de API Keys</h1>;
-};
-
-export default ApiKey;
+    </div>
+  )
+}

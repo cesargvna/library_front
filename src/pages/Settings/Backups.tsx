@@ -1,7 +1,8 @@
-import React from "react";
+export default function Backups() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Respaldo</h1>
 
-const Backups = () => {
-  return <h1>Copias de Seguridad</h1>;
-};
-
-export default Backups;
+    </div>
+  )
+}
