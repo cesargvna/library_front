@@ -1,19 +1,20 @@
 import React from "react";
-import { } from "formik";
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import { FaUser, FaLock } from "react-icons/fa";
 import {
     Container,
     LoginBox,
     Title,
-    Logo,
     Input,
     ErrorMessage,
     InputGroup,
-    Registration
+    Registration,
+    InputWrapper
 } from "./Login.styles";
 import Button from "../../components/Button";
-import { enqueueSnackbar } from "notistack";
+import Logo from "../../components/Logo";
+
 const SignupSchema = Yup.object().shape({
     username: Yup.string()
         .min(3, "El nombre de usuario debe tener al menos 3 caracteres")
@@ -25,12 +26,11 @@ const SignupSchema = Yup.object().shape({
 });
 
 const Login: React.FC = () => {
-
     return (
         <Container>
             <LoginBox>
                 <Title>BIENVENIDOS</Title>
-                <Logo>M</Logo>
+                <Logo imageUrl="https://imgs.search.brave.com/tHfzQlT8kDY8QWTR8HzEwA-J8NE1IxKzTHDWsipTqIQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyYm9sb2dv/LmNvbS9hc3NldHMv/ZmVhdHVyZXMvcHJv/ZmVzc2lvbmFsLWxv/Z28tdGVtcGxhdGVz/LTNlYjBlMDE2YThj/ZjA5YzFiOGM4MjQz/YTQ4ZmQ5ZmMyZDJk/YTBiODMzZjhjYTg1/YmI3N2JmOTliMjE1/NzFiYzguc3Zn" />
                 <Formik
                     initialValues={{
                         username: "",
@@ -38,32 +38,37 @@ const Login: React.FC = () => {
                     }}
                     validationSchema={SignupSchema}
                     onSubmit={values => {
-                        // same shape as initial values
                         console.log(values);
                     }}
                 >
                     {({ errors, touched }) => (
-                        <Registration >
+                        <Registration>
                             <InputGroup>
-                                <Input
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Nombre de usuario"
-                                    autoComplete="off"
-                                />
+                                <InputWrapper>
+                                    <FaUser style={{ color: "var(--primary-color)" }} />
+                                    <Input
+                                        type="text"
+                                        id="username"
+                                        name="username"
+                                        placeholder="Nombre de usuario"
+                                        autoComplete="off"
+                                    />
+                                </InputWrapper>
                                 {errors.username && touched.username ? (
                                     <ErrorMessage>{errors.username}</ErrorMessage>
                                 ) : null}
                             </InputGroup>
 
                             <InputGroup>
-                                <Input
-                                    type="password"
-                                    id="password"
-                                    name="password"
-                                    placeholder="Contraseña"
-                                />
+                                <InputWrapper>
+                                    <FaLock style={{ color: "var(--primary-color)" }} />
+                                    <Input
+                                        type="password"
+                                        id="password"
+                                        name="password"
+                                        placeholder="Contraseña"
+                                    />
+                                </InputWrapper>
                                 {errors.password && touched.password ? (
                                     <ErrorMessage>{errors.password}</ErrorMessage>
                                 ) : null}
@@ -72,7 +77,6 @@ const Login: React.FC = () => {
                         </Registration>
                     )}
                 </Formik>
-
             </LoginBox>
         </Container>
     );
