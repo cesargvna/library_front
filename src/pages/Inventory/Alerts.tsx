@@ -1,7 +1,8 @@
-import React from "react";
+export default function Alerts() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>ALERTAS</h1>
 
-const Alerts = () => {
-  return <h1>Alertas de Stock Bajo</h1>;
-};
-
-export default Alerts;
+    </div>
+  )
+}

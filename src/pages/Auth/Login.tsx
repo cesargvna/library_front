@@ -11,7 +11,8 @@ import {
     ErrorMessage,
     InputGroup,
     Registration,
-    InputWrapper
+    InputWrapper,
+    LogoImage
 } from "./Login.styles";
 import Button from "../../components/Button";
 
@@ -30,7 +31,7 @@ const Login: React.FC = () => {
         <Container>
             <LoginBox>
                 <Title>BIENVENIDOS</Title>
-                <Logo>M</Logo>
+                <LogoImage src="https://imgs.search.brave.com/tHfzQlT8kDY8QWTR8HzEwA-J8NE1IxKzTHDWsipTqIQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyYm9sb2dv/LmNvbS9hc3NldHMv/ZmVhdHVyZXMvcHJv/ZmVzc2lvbmFsLWxv/Z28tdGVtcGxhdGVz/LTNlYjBlMDE2YThj/ZjA5YzFiOGM4MjQz/YTQ4ZmQ5ZmMyZDJk/YTBiODMzZjhjYTg1/YmI3N2JmOTliMjE1/NzFiYzguc3Zn" alt="Logo" />
                 <Formik
                     initialValues={{
                         username: "",

@@ -1,7 +1,8 @@
-import React from "react";
+export default function Documents() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Documents</h1>
 
-const Documents = () => {
-  return <h1>Gestión de Documentos</h1>;
-};
-
-export default Documents;
+    </div>
+  )
+}

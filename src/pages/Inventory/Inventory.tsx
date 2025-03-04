@@ -1,7 +1,8 @@
-import React from "react";
+export default function Inventory() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Inventory</h1>
 
-const Inventory = () => {
-  return <h1>Inventario</h1>;
-};
-
-export default Inventory;
+    </div>
+  )
+}

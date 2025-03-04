@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router";
 import { sidebarItems } from "./SidebarData";
-import { SidebarContainer, NavList, NavItem, SidebarContent, Main, SubMenu, NavItemWithSubmenu, ButtonSubMenu } from "./Sidebar.style";
+import { SidebarContainer, NavList, NavItem, SidebarContent, Main, SubMenu, NavItemWithSubmenu, ButtonSubMenu, LogoImage } from "./Sidebar.style";
 import Header from "../Header/Header";
 import { Logo } from "../../pages/Auth/Login.styles";
 
@@ -10,8 +10,12 @@ const Sidebar: React.FC<{ children: React.JSX.Element }> = ({ children }) => {
 
   return (
     <SidebarContainer>
+      
       <SidebarContent>
-        <Logo>M</Logo>
+        <Link to="/dashboard/main">
+          <LogoImage src="https://imgs.search.brave.com/tHfzQlT8kDY8QWTR8HzEwA-J8NE1IxKzTHDWsipTqIQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyYm9sb2dv/LmNvbS9hc3NldHMv/ZmVhdHVyZXMvcHJv/ZmVzc2lvbmFsLWxv/Z28tdGVtcGxhdGVz/LTNlYjBlMDE2YThj/ZjA5YzFiOGM4MjQz/YTQ4ZmQ5ZmMyZDJk/YTBiODMzZjhjYTg1/YmI3N2JmOTliMjE1/NzFiYzguc3Zn" alt="Logo" />
+        </Link>
+
         <NavList>
           
           {sidebarItems.map((item, index) => (

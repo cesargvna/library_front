@@ -1,7 +1,8 @@
-import React from "react";
+export default function General() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>GENERAL CONFIG</h1>
 
-const GeneralSettings = () => {
-  return <h1>Configuración General</h1>;
-};
-
-export default GeneralSettings;
+    </div>
+  )
+}

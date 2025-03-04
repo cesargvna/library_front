@@ -1,7 +1,8 @@
-import React from "react";
+export default function Logs() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>Logs</h1>
 
-const Logs = () => {
-  return <h1>Logs del Sistema</h1>;
-};
-
-export default Logs;
+    </div>
+  )
+}

@@ -1,7 +1,8 @@
-import React from "react";
+export default function Catalog() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>CATALOGO</h1>
 
-const Catalog = () => {
-  return <h1>Catálogo de Productos</h1>;
-};
-
-export default Catalog;
+    </div>
+  )
+}

@@ -1,7 +1,8 @@
-import React from "react";
+export default function Clients() {
+  return (
+    <div>
+        <h1 style={{fontSize:"10rem"}}>CLIENTES</h1>
 
-const Clients = () => {
-  return <h1>Gestión de Clientes</h1>;
-};
-
-export default Clients;
+    </div>
+  )
+}
