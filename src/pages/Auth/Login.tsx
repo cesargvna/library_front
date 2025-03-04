@@ -6,15 +6,14 @@ import {
     Container,
     LoginBox,
     Title,
-    Logo,
     Input,
     ErrorMessage,
     InputGroup,
     Registration,
-    InputWrapper,
-    LogoImage
+    InputWrapper
 } from "./Login.styles";
 import Button from "../../components/Button";
+import Logo from "../../components/Logo";
 
 const SignupSchema = Yup.object().shape({
     username: Yup.string()
@@ -31,7 +30,7 @@ const Login: React.FC = () => {
         <Container>
             <LoginBox>
                 <Title>BIENVENIDOS</Title>
-                <LogoImage src="https://imgs.search.brave.com/tHfzQlT8kDY8QWTR8HzEwA-J8NE1IxKzTHDWsipTqIQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyYm9sb2dv/LmNvbS9hc3NldHMv/ZmVhdHVyZXMvcHJv/ZmVzc2lvbmFsLWxv/Z28tdGVtcGxhdGVz/LTNlYjBlMDE2YThj/ZjA5YzFiOGM4MjQz/YTQ4ZmQ5ZmMyZDJk/YTBiODMzZjhjYTg1/YmI3N2JmOTliMjE1/NzFiYzguc3Zn" alt="Logo" />
+                <Logo imageUrl="https://imgs.search.brave.com/tHfzQlT8kDY8QWTR8HzEwA-J8NE1IxKzTHDWsipTqIQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9hc3Nl/dHMudHVyYm9sb2dv/LmNvbS9hc3NldHMv/ZmVhdHVyZXMvcHJv/ZmVzc2lvbmFsLWxv/Z28tdGVtcGxhdGVz/LTNlYjBlMDE2YThj/ZjA5YzFiOGM4MjQz/YTQ4ZmQ5ZmMyZDJk/YTBiODMzZjhjYTg1/YmI3N2JmOTliMjE1/NzFiYzguc3Zn" />
                 <Formik
                     initialValues={{
                         username: "",

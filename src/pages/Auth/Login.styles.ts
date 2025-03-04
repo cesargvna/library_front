@@ -103,18 +103,3 @@ export const InputWrapper = styled.div`
         color: #bbb;
     }
 `;
-
-export const LogoImage = styled.img`
-  width: 40px; /* Tamaño del logo */
-  height: 40px;
-  border-radius: 50%; /* Hace que sea circular */
-  object-fit: cover; /* Ajusta la imagen sin deformarla */
-  display: block;
-  margin: 20px auto; /* Centrar el logo */
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1); /* Pequeño efecto de zoom al pasar el mouse */
-  }
-`;

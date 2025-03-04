@@ -79,13 +79,13 @@ export const NavList = styled.div`
 
 export const NavItem = styled.div`
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   padding: 15px;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
   transition: background 0.3s ease, padding-left 0.3s ease;
-  justify-content: center;
   white-space: nowrap;
   overflow: hidden;
 
@@ -131,11 +131,6 @@ export const NavItem = styled.div`
 
 export const SubMenu = styled.div`
   background-color: #1a2a3a;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  width: 100%;
-  max-height: 200px; /* Controla la altura del submenú */
   overflow-y: auto; /* Permite scroll solo si es necesario */
   overflow-x: hidden; /* Elimina el desplazamiento horizontal */
   display: none;
@@ -143,8 +138,7 @@ export const SubMenu = styled.div`
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   padding: 5px 0;
-  z-index: 100;
-  transition: all 0.2s ease-in-out;
+  transition: height 0.5s ease-in-out;
 
   .submenu-item {
     padding: 12px 18px;
@@ -153,7 +147,7 @@ export const SubMenu = styled.div`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    transition: background 0.3s ease, transform 0.2s ease;
+    transition: background 0.3s ease, transform 0.3s ease;
   }
 
   .submenu-item:hover {
@@ -167,30 +161,5 @@ export const NavItemWithSubmenu = styled.div`
   width: 100%;
   &:hover ${SubMenu} {
     display: flex;
-  }
-`;
-
-export const ButtonSubMenu = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  text-decoration: none;
-  color: #ffffff; /* Texto en blanco */
-  width: 100%;
-  
-`;
-
-export const LogoImage = styled.img`
-  width: 40px; /* Tamaño del logo */
-  height: 40px;
-  border-radius: 50%; /* Hace que sea circular */
-  object-fit: cover; /* Ajusta la imagen sin deformarla */
-  display: block;
-  margin: 20px auto; /* Centrar el logo */
-  cursor: pointer;
-  transition: transform 0.3s ease;
-
-  &:hover {
-    transform: scale(1.1); /* Pequeño efecto de zoom al pasar el mouse */
   }
 `;
